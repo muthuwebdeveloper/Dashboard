@@ -1,8 +1,10 @@
 export const ROUTES = {
+  LOGIN: "/login",
   HOME: "/",
-  SALES_REPORT: "/salesreport",
+  ALLEMPLOYEE: "/allemployees",
   CALENDAR: "/calendar",
-  PROFILE: "/profile",
+  LEAVE_REQUEST: "/leaverequest",
+  ALL_ATTENDANCE: "/allattendance",
   ADMIN_OVERVIEW: "/adminoverview",
-  SALES: "/sales",
+  PROJECT: "/project",
 };

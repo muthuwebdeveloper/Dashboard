@@ -1,24 +1,49 @@
-import { RiNotificationLine } from "@remixicon/react";
 import React from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import { RiFullscreenLine, RiNotificationLine } from "@remixicon/react";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../constants/routeConstants";
 
 const Topbar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+  const navigate = useNavigate();
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleFullscreenToggle = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch((err) => {
+        console.log(`Error attempting to enable fullscreen: ${err.message}`);
+      });
+    } else {
+      document.exitFullscreen().catch((err) => {
+        console.log(`Error attempting to exit fullscreen: ${err.message}`);
+      });
+    }
+  };
+
+  const handleLogin = () => {
+    handleClose();
+    navigate(ROUTES.LOGIN);
   };
 
   return (
     <div className="topbar">
       <div className="top_left">
-        <h2>Sales Mangement</h2>
+        <h2>Sales Management</h2>
       </div>
       <div className="top_right">
+        <button className="top_notfi" onClick={handleFullscreenToggle}>
+          <RiFullscreenLine className="icon" />
+        </button>
         <button className="top_notfi">
           <RiNotificationLine className="icon" />
         </button>
@@ -48,9 +73,9 @@ const Topbar = () => {
               "aria-labelledby": "basic-button",
             }}
           >
-            <MenuItem onClick={handleClose}> Profile</MenuItem>
-            <MenuItem onClick={handleClose}> My account</MenuItem>
-            <MenuItem onClick={handleClose}> Logout</MenuItem>
+            <MenuItem onClick={handleClose}>Profile</MenuItem>
+            <MenuItem onClick={handleClose}>My account</MenuItem>
+            <MenuItem onClick={handleLogin}>Login</MenuItem>
           </Menu>
         </div>
       </div>

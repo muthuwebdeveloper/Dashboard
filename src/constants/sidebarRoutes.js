@@ -1,11 +1,11 @@
 import React from "react";
 import {
   RiSpeedUpLine,
-  RiPieChartLine,
   RiCalendarLine,
-  RiUser3Line,
-  RiAdminLine,
-  RiFileListLine,
+  RiUser2Line,
+  RiSurveyLine,
+  RiListCheck3,
+  RiProjector2Line,
 } from "@remixicon/react";
 import { ROUTES } from "./routeConstants";
 
@@ -17,9 +17,9 @@ export const routes = [
     key: "1",
   },
   {
-    path: ROUTES.SALES_REPORT,
-    label: "Sales Report",
-    icon: <RiPieChartLine className="icon side-icon" />,
+    path: ROUTES.ALLEMPLOYEE,
+    label: "All Employees",
+    icon: <RiUser2Line className="icon side-icon" />,
     key: "2",
   },
   {
@@ -29,21 +29,21 @@ export const routes = [
     key: "3",
   },
   {
-    path: ROUTES.PROFILE,
-    label: "Profile",
-    icon: <RiUser3Line className="icon side-icon" />,
+    path: ROUTES.LEAVE_REQUEST,
+    label: "All Leave Request",
+    icon: <RiSurveyLine className="icon side-icon" />,
     key: "4",
   },
   {
-    path: ROUTES.ADMIN_OVERVIEW,
-    label: "Admin Overview",
-    icon: <RiAdminLine className="icon side-icon" />,
+    path: ROUTES.ALL_ATTENDANCE,
+    label: "All Attendance",
+    icon: <RiListCheck3 className="icon side-icon" />,
     key: "5",
   },
   {
-    path: ROUTES.SALES,
-    label: "Sales",
-    icon: <RiFileListLine className="icon side-icon" />,
+    path: ROUTES.PROJECT,
+    label: "Project",
+    icon: <RiProjector2Line className="icon side-icon" />,
     key: "6",
   },
 ];

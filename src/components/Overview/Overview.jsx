@@ -30,7 +30,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
 import Calendar from "../Calendar/Calendar";
-import Profile from "../Profile/Profile";
+import Profile from "../Leave/AllLeaveRequest";
 
 // Define colors for the chart
 const COLORS = ["#0088FE", "#FF8042", "#00C49F", "#FFBB28"];

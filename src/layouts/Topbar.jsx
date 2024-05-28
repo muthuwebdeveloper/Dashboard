@@ -75,7 +75,7 @@ const Topbar = () => {
           >
             <MenuItem onClick={handleClose}>Profile</MenuItem>
             <MenuItem onClick={handleClose}>My account</MenuItem>
-            <MenuItem onClick={handleLogin}>Login</MenuItem>
+            <MenuItem onClick={handleLogin}>Logout</MenuItem>
           </Menu>
         </div>
       </div>

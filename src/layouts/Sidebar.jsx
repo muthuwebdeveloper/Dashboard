@@ -4,8 +4,12 @@ import { NavLink } from "react-router-dom";
 import logo from "../assets/images/plus-circle.svg";
 import { RiArrowDropLeftLine, RiArrowDropRightLine } from "@remixicon/react";
 import { routes } from "../constants/sidebarRoutes";
+import { useSelector } from "react-redux";
 
 const Sidebar = ({ handleMenu, open }) => {
+  const userRole = useSelector((state) => state.auth.userRole);
+  const filteredRoutes = routes.filter((route) => route.role === userRole);
+
   return (
     <div className="sidebar">
       <div className="side_top">
@@ -16,7 +20,7 @@ const Sidebar = ({ handleMenu, open }) => {
       </div>
       <div className="side_middle">
         <ul className="sidebar_nav">
-          {routes.map((route) => (
+          {filteredRoutes.map((route) => (
             <li
               key={route.key}
               className={`sidebar_item ${!open ? "collapsed" : ""}`}

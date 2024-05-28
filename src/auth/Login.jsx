@@ -29,10 +29,10 @@ const Login = () => {
     event.preventDefault();
     if (email === "admin@mail.com" && password === "admin123") {
       dispatch(loginSuccess("admin"));
-      navigate(ROUTES.HOME); // Navigate to admin dashboard
+      navigate(ROUTES.HOME);
     } else if (email === "employee@mail.com" && password === "user123") {
       dispatch(loginSuccess("user"));
-      navigate(ROUTES.USER_OVERVIEW); // Navigate to user overview
+      navigate(ROUTES.USER_OVERVIEW);
     } else {
       alert("Invalid credentials");
     }

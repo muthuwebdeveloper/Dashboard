@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Topbar from "./Topbar";
 import Sidebar from "./Sidebar";
-import DynamicBreadcrumbs from "../styles/component/Breadcrumbs";
+import DynamicBreadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
 
 const Main = () => {
   const [open, setOpen] = useState(false);

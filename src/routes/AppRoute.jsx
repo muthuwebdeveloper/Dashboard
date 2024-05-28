@@ -13,6 +13,7 @@ import Project from "../components/Project/Project";
 import Login from "../auth/Login";
 import UserOverview from "../components/Overview/UserOverview";
 import UserAttendance from "../components/Attendance/UserAttendance";
+import PrivateRoute from "./PrivateRoute";
 
 const routeConfig = [
   { path: ROUTES.LOGIN, element: <Login /> },
@@ -21,13 +22,62 @@ const routeConfig = [
     element: <Main />,
     children: [
       { path: "", element: <Overview />, index: true },
-      { path: ROUTES.ALLEMPLOYEE, element: <SalesReport /> },
-      { path: ROUTES.CALENDAR, element: <Calendar /> },
-      { path: ROUTES.LEAVE_REQUEST, element: <AllLeaveRequest /> },
-      { path: ROUTES.ALL_ATTENDANCE, element: <AllAttendance /> },
-      { path: ROUTES.PROJECT, element: <Project /> },
-      { path: ROUTES.USER_OVERVIEW, element: <UserOverview /> },
-      { path: ROUTES.USER_ATTENDANCE, element: <UserAttendance /> },
+      {
+        path: ROUTES.ALL_EMPLOYEE,
+        element: (
+          <PrivateRoute role="admin">
+            <SalesReport />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: ROUTES.CALENDAR,
+        element: (
+          <PrivateRoute role="admin">
+            <Calendar />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: ROUTES.ALL_LEAVE_REQUEST,
+        element: (
+          <PrivateRoute role="admin">
+            <AllLeaveRequest />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: ROUTES.ALL_ATTENDANCE,
+        element: (
+          <PrivateRoute role="admin">
+            <AllAttendance />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: ROUTES.PROJECT,
+        element: (
+          <PrivateRoute role="admin">
+            <Project />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: ROUTES.USER_OVERVIEW,
+        element: (
+          <PrivateRoute role="user">
+            <UserOverview />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: ROUTES.USER_ATTENDANCE,
+        element: (
+          <PrivateRoute role="user">
+            <UserAttendance />
+          </PrivateRoute>
+        ),
+      },
     ],
   },
   { path: "*", element: <NoPageFound /> },

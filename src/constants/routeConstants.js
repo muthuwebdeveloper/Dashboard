@@ -1,12 +1,13 @@
+// src/constants/routeConstants.js
 export const ROUTES = {
   LOGIN: "/login",
   HOME: "/",
-  ALLEMPLOYEE: "/allemployees",
+  OVERVIEW: "/overview",
+  ALL_EMPLOYEE: "/all-employee",
   CALENDAR: "/calendar",
-  LEAVE_REQUEST: "/leaverequest",
-  ALL_ATTENDANCE: "/allattendance",
-  ADMIN_OVERVIEW: "/adminoverview",
+  ALL_LEAVE_REQUEST: "/leave-request",
+  ALL_ATTENDANCE: "/all-attendance",
   PROJECT: "/project",
-  USER_OVERVIEW: "/dashboard",
-  USER_ATTENDANCE: "/attendance",
+  USER_OVERVIEW: "/user-overview",
+  USER_ATTENDANCE: "/user-attendance",
 };

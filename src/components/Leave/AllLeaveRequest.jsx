@@ -44,7 +44,7 @@ const initialLeaveRecords = [
     "2024-05-20",
     "2024-05-25",
     6,
-    "Approved",
+    "Pending",
     "Taking a long-awaited family vacation to reconnect and unwind."
   ),
   createLeaveRecord(
@@ -53,7 +53,7 @@ const initialLeaveRecords = [
     "2024-06-10",
     "2024-06-12",
     3,
-    "Rejected",
+    "Pending",
     "Recovering from a severe flu that requires rest and medical attention."
   ),
   createLeaveRecord(
@@ -62,7 +62,7 @@ const initialLeaveRecords = [
     "2024-07-01",
     "2024-07-15",
     15,
-    "Approved",
+    "Pending",
     "Caring for newborn twins and supporting spouse during postpartum recovery."
   ),
   createLeaveRecord(
@@ -71,7 +71,7 @@ const initialLeaveRecords = [
     "2024-08-05",
     "2024-08-25",
     21,
-    "Approved",
+    "Pending",
     "Pursuing advanced studies to enhance skills and knowledge in current role."
   ),
   createLeaveRecord(
@@ -80,7 +80,7 @@ const initialLeaveRecords = [
     "2024-09-10",
     "2024-09-12",
     3,
-    "Approved",
+    "Pending",
     "Attending to urgent family matters that require immediate attention."
   ),
   createLeaveRecord(
@@ -89,7 +89,7 @@ const initialLeaveRecords = [
     "2025-01-05",
     "2025-04-05",
     90,
-    "Approved",
+    "Pending",
     "Preparing for and recovering from childbirth, ensuring a healthy start for newborn."
   ),
   createLeaveRecord(
@@ -98,7 +98,7 @@ const initialLeaveRecords = [
     "2024-11-15",
     "2024-11-20",
     6,
-    "Approved",
+    "Pending",
     "Bonding with newborn and supporting partner during the early stages of parenthood."
   ),
   createLeaveRecord(
@@ -107,7 +107,7 @@ const initialLeaveRecords = [
     "2024-10-02",
     "2024-10-05",
     4,
-    "Rejected",
+    "Pending",
     "Dealing with a sudden family crisis requiring immediate attention and support."
   ),
 ];
@@ -115,6 +115,9 @@ const initialLeaveRecords = [
 const AllLeaveRequest = () => {
   const [search, setSearch] = useState("");
   const [filteredLeaves, setFilteredLeaves] = useState(initialLeaveRecords);
+  const [statuses, setStatuses] = useState(
+    initialLeaveRecords.map(() => "Pending")
+  );
 
   const handleChange = (e) => {
     const val = e.target.value.toLowerCase();
@@ -131,6 +134,18 @@ const AllLeaveRequest = () => {
     });
 
     setFilteredLeaves(filteredData);
+  };
+
+  const handleReject = (index) => {
+    const newStatuses = [...statuses];
+    newStatuses[index] = "Rejected";
+    setStatuses(newStatuses);
+  };
+
+  const handleApprove = (index) => {
+    const newStatuses = [...statuses];
+    newStatuses[index] = "Approved";
+    setStatuses(newStatuses);
   };
 
   return (
@@ -191,22 +206,20 @@ const AllLeaveRequest = () => {
                         <TableCell>{record.numOfDays}</TableCell>
                         <TableCell>
                           <p
-                            className={`status ${
-                              record.status === "Approved"
-                                ? "status-approved"
-                                : "status-rejected"
-                            }`}
+                            className={`status status-${statuses[
+                              index
+                            ].toLowerCase()}`}
                           >
-                            {record.status}
+                            {statuses[index]}
                           </p>
                         </TableCell>
                         <TableCell>{record.reason}</TableCell>
                         <TableCell>
                           <div className="allleaverequest_action-buttons">
-                            <button>
+                            <button onClick={() => handleReject(index)}>
                               <RiCloseLine className="icon allleaverequest_icon_close" />
                             </button>
-                            <button>
+                            <button onClick={() => handleApprove(index)}>
                               <RiCheckLine className="icon allleaverequest_icon_check" />
                             </button>
                           </div>

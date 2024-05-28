@@ -46,4 +46,16 @@ export const routes = [
     icon: <RiProjector2Line className="icon side-icon" />,
     key: "6",
   },
+  {
+    path: ROUTES.USER_OVERVIEW,
+    label: "UserOverview",
+    icon: <RiSpeedUpLine className="icon side-icon" />,
+    key: "7",
+  },
+  {
+    path: ROUTES.USER_ATTENDANCE,
+    label: "UserAttendance",
+    icon: <RiListCheck3 className="icon side-icon" />,
+    key: "8",
+  },
 ];

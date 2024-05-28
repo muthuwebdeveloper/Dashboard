@@ -62,6 +62,7 @@
     display: inline-block;
     border: 1px solid;
     border-radius: 6px;
+    font-weight: 500;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
 
@@ -73,5 +74,10 @@
   .status-rejected {
     color: $red;
     border-color: $red;
+  }
+
+  .status-pending {
+    color: $orange;
+    border-color: $orange;
   }
 }

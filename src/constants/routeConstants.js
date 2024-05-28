@@ -7,4 +7,6 @@ export const ROUTES = {
   ALL_ATTENDANCE: "/allattendance",
   ADMIN_OVERVIEW: "/adminoverview",
   PROJECT: "/project",
+  USER_OVERVIEW: "/dashboard",
+  USER_ATTENDANCE: "/attendance",
 };

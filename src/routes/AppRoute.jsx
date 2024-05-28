@@ -11,6 +11,8 @@ import AllLeaveRequest from "../components/Leave/AllLeaveRequest";
 import AllAttendance from "../components/Attendance/AllAttendance";
 import Project from "../components/Project/Project";
 import Login from "../auth/Login";
+import UserOverview from "../components/Overview/UserOverview";
+import UserAttendance from "../components/Attendance/UserAttendance";
 
 const routeConfig = [
   { path: ROUTES.LOGIN, element: <Login /> },
@@ -24,6 +26,8 @@ const routeConfig = [
       { path: ROUTES.LEAVE_REQUEST, element: <AllLeaveRequest /> },
       { path: ROUTES.ALL_ATTENDANCE, element: <AllAttendance /> },
       { path: ROUTES.PROJECT, element: <Project /> },
+      { path: ROUTES.USER_OVERVIEW, element: <UserOverview /> },
+      { path: ROUTES.USER_ATTENDANCE, element: <UserAttendance /> },
     ],
   },
   { path: "*", element: <NoPageFound /> },

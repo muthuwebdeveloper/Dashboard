@@ -1,4 +1,5 @@
 // src/constants/routeConstants.js
+
 export const ROUTES = {
   LOGIN: "/login",
   HOME: "/",
@@ -10,4 +11,5 @@ export const ROUTES = {
   PROJECT: "/project",
   USER_OVERVIEW: "/user-overview",
   USER_ATTENDANCE: "/user-attendance",
+  USER_PROJECT: "/user-project",
 };

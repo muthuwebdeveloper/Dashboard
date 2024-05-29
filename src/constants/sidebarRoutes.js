@@ -66,4 +66,11 @@ export const routes = [
     key: "8",
     role: "user",
   },
+  {
+    path: ROUTES.USER_PROJECT,
+    label: "My Project",
+    icon: <RiProjector2Line className="icon side-icon" />,
+    key: "9",
+    role: "user",
+  },
 ];

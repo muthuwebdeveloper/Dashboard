@@ -14,6 +14,7 @@ import Login from "../auth/Login";
 import UserOverview from "../components/Overview/UserOverview";
 import UserAttendance from "../components/Attendance/UserAttendance";
 import PrivateRoute from "./PrivateRoute";
+import MyProject from "../components/Project/MyProject";
 
 const routeConfig = [
   { path: ROUTES.LOGIN, element: <Login /> },
@@ -75,6 +76,14 @@ const routeConfig = [
         element: (
           <PrivateRoute role="user">
             <UserAttendance />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: ROUTES.USER_PROJECT,
+        element: (
+          <PrivateRoute role="user">
+            <MyProject />
           </PrivateRoute>
         ),
       },

@@ -8,12 +8,6 @@ import {
   TableRow,
   Grid,
 } from "@mui/material";
-import {
-  RiEditLine,
-  RiDeleteBin5Line,
-  RiCloseLine,
-  RiCheckLine,
-} from "@remixicon/react";
 import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";
 
